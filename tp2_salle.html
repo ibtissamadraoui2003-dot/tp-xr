@@ -214,6 +214,7 @@ AFRAME.registerComponent('zone-depot', {
         const ancienne = this.el.getAttribute('material').color;
         this.el.setAttribute('material', 'color', '#d32f2f');
         setTimeout(() => this.el.setAttribute('material', 'color', ancienne), 500);
+        inst.relacher();
         majPanneau('Mauvaise zone. Réessayez.');
       }
     });
