@@ -125,6 +125,7 @@ AFRAME.registerComponent('teleport-sol', {
   init() {
     this.el.addEventListener('click', e => {
       if (!e.detail.intersection) return;
+      if (jeu.main) { jeu.main.components.instrument.relacher(); return; }   // annulation : toucher le sol repose l'objet
       const p = e.detail.intersection.point;
       const rig = document.getElementById('rig');
       const x = Math.max(-2.4, Math.min(2.4, p.x));
